@@ -229,9 +229,7 @@ def run_java_static_checker(src_file):
 	print("The final messges will be : " )
 	print (warning_data)
 	
-
-
-	
+run_java_static_checker("")
 	
 	
 	

@@ -1,0 +1,55 @@
+1) Basic: The Basic ruleset contains a collection of good practices which should be followed.
+- Avoid jumbled loop incrementers - its usually a mistake, and is confusing even if intentional.
+- Some for loops can be simplified to while loops, this makes them more concise.
+- Do not use "if" statements whose conditionals are always true or always false.
+- Using a branching statement as the last part of a loop may be a bug, and/or is confusing.
+- Ensure that the usage is not a bug, or consider using another approach.
+- Don't use floating point for loop indices. If you must use floating point, use double unless you're certain that float provides enough precision and you have a compelling performance need (space or time).
+
+2) Braces: The Braces ruleset contains rules regarding the use and placement of braces.
+- Avoid using if statements without using braces to surround the code block. If the code formatting or indentation is lost then it becomes difficult to separate the code being controlled from the rest.
+- Avoid using 'while' statements without using braces to surround the code block. If the code formatting or indentation is lost then it becomes difficult to separate the code being controlled from the rest.
+- Avoid using if..else statements without using surrounding braces. If the code formatting or indentation is lost then it becomes difficult to separate the code being controlled from the rest.
+- Avoid using 'for' statements without using curly braces. If the code formatting or indentation is lost then it becomes difficult to separate the code being controlled from the rest.
+
+3) Controversial
+- Each class should declare at least one constructor.
+
+4) Design : The Design ruleset contains rules that flag suboptimal code implementations. Alternate approaches are suggested.
+- Avoid unnecessary if-then-else statements when returning a boolean. The result of the conditional test can be returned instead.
+- Avoid unnecessary comparisons in boolean expressions, they serve no purpose and impacts readability.
+- All switch statements should include a default option to catch any unspecified values.
+- Avoid creating deeply nested if-then statements since they are harder to read and error-prone to maintain.
+- Reassigning values to incoming parameters is not recommended.  Use temporary local variables instead.
+- A high ratio of statements to labels in a switch statement implies that the switch statement is overloaded.  Consider moving the statements into new methods or creating subclasses based on the switch variable.
+- A non-case label (e.g. a named break/continue label) was present in a switch statement. This legal, but confusing. It is easy to mix up the case labels and the non-case labels.
+- A void equality comparisons with Double.NaN. Due to the implicit lack of representation precision when comparing floating point numbers these are likely to cause logic errors.
+- A void negation within an "if" expression with an "else" clause.  For example, rephrase: if (x != y) diff(); else same(); as: if (x == y) same(); else diff(); Most "if (x != y)" cases without an "else" are often return cases, so consistent use of this rule makes the code easier to read.  Also, this resolves trivial ordering problems, such as "does the error case go first?" or "does the common case go first?".
+- Switch statements without break or return statements for each case option may indicate problematic behaviour. Empty cases are ignored as these indicate an intentional fall-through.
+- Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+
+5) Empty: The Empty Code ruleset contains rules that find empty statements of any kind (empty method, empty block statement, empty try or catch block,...).	
+- Empty If Statement finds instances where a condition is checked but nothing is done about it.
+- Empty While Statement finds all instances where a while statement does nothing.  
+- Avoid empty try blocks - what's the point?
+- Empty switch statements serve no purpose and should be removed.
+- An empty statement (or a semicolon by itself) that is not used as the sole body of a 'for' or 'while' loop is probably a bug.  It could also be a double semicolon, which has no purpose and should be removed.
+- Empty block statements serve no purpose and should be removed.
+
+6) Imports: These rules deal with different problems that can occur with import statements.
+- Duplicate or overlapping import statements should be avoided.
+- Avoid the use of unused import statements to prevent unwanted dependencies.
+
+7) Naming: The Naming Ruleset contains rules regarding preferred usage of names and identifiers.
+- Fields, local variables, or parameter names that are very short are not helpful to the reader.
+- Fields, formal arguments, or local variable names that are too long can make the code difficult to follow.
+- Method names that are very short are not helpful to the reader.
+- A variable naming conventions rule - customize this to your liking.  Currently, it checks for final variables that should be fully capitalized and non-final variables that should not include underscores.
+- Method names should always begin with a lower case character, and should not contain underscores.
+- Class names should always begin with an upper case character.
+- Avoid using dollar signs in variable/method/class/interface names.
+- It is somewhat confusing to have a field name matching the declaring class name. This probably means that type and/or field names should be chosen more carefully.
+- It can be confusing to have a field name with the same name as a method. While this is permitted, having information (field) and actions (method) is not clear naming. Developers versed in Smalltalk often prefer this approach as the methods denote accessor methods.
+
+8) Unnecessary: The Unnecessary Ruleset contains a collection of rules for unnecessary code.
+- Avoid the use of unnecessary return statements.
