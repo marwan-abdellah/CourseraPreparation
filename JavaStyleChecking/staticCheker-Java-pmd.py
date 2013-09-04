@@ -156,36 +156,7 @@ def run_java_static_checker(src_file):
 	pmd_rule_path = PMD_SOURCE + "/pmd-bin-5.0.4/rulesets/java/"
 	
 	# PMD rule 
-	pmd_rule_list =  ["android.xml", 
-					"basic.xml",
-					"braces.xml",
-					"clone.xml",
-					"codesize.xml",
-					"comments.xml",
-					"controversial.xml",
-					"design.xml",
-					"empty.xml",
-					"finalizers.xml",
-					"imports.xml",
-					"j2ee.xml",
-					"javabeans.xml",
-					"junit.xml",
-					"logging-jakarta-commons.xml",
-					"logging-java.xml",
-					"migrating_to_13.xml",
-					"migrating_to_14.xml",
-					"migrating_to_15.xml",
-					"migrating_to_junit4.xml",
-					"migrating.xml",
-					"naming.xml",
-					"optimizations.xml",
-					"rulesets.properties",
-					"strictexception.xml",
-					"strings.xml",
-					"sunsecure.xml",
-					"typeresolution.xml",
-					"unnecessary.xml",
-					"unusedcode.xml"]
+	pmd_rule_list =  ["course-intro.xml"]
 	
 	# Check the selected rules in the list "CUSTOMIZABLE"  
 	for rule in pmd_rule_list:
